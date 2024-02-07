@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4_BLOCK</title>
+    <style>
+        div {
+            border: 1px solid rgb(210, 91, 91);
+            margin: 3rem;
+            padding: 3rem;
+            width: 20rem;
+            height: 10rem;
+        }
+        div.child1 {
+            /* width, height를 지정할 때 내부 여백과 테두리가 포함됩니다. */
+            box-sizing: border-box;
+        }
+        main {
+            box-sizing: border-box;
+            border-top : 5px dashed greenyellow;
+            border-bottom: 4px solid green;
+            width: 50rem;
+            max-height: 50rem;
+            background-size: cover;
+            background-image: url('https://img.freepik.com/free-photo/bukhansan-mountains-is-covered-by-morning-fog-and-sunrise-in-seoul-korea_335224-501.jpg?w=1380&t=st=1707284039~exp=1707284639~hmac=f11917722c9d1126cb1f10417e8e13a3fb0c630404e59d113e421d44905c2566');
+            margin: 1rem 2rem 3rem 4rem;
+            padding: 4rem 3rem 2rem 1rem;
+        }
+        div.child2 {
+            box-sizing: border-box;
+            width: 25rem;
+            height: 25px;
+            border: 4.5px lightblue;
+            border-style: solid dashed;
+            padding: 3rem 4rem 8rem;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h3>블록요소 CSS</h3>
+        <p>
+            너비, 높이를 설정할 수 있습니다. 이때 크기를 지정하는 간위는 주로 px, rem, em, %입니다.
+            이 중에서 px, rem은 html 요소를 절대값으로 합니다. em, %는 바로 상위 요소를 기준으로 하는 상대값입니다.
+        </p>
+    </main>
+    <div>1</div>
+    <div class="child1">2</div>
+    <div class="child2">3</div>
+    <main style="margin: auto;">
+        <h3>블록요소 CSS</h3>
+        <p>
+            너비, 높이를 설정할 수 있습니다. 이때 크기를 지정하는 간위는 주로 px, rem, em, %입니다.
+            이 중에서 px, rem은 html 요소를 절대값으로 합니다. em, %는 바로 상위 요소를 기준으로 하는 상대값입니다.
+        </p>
+    </main>
+</body>
+</html>

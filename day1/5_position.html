@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5_POSITION</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            /* 16px * 0.625 = 10px = 1rem */
+            font-size: 62.5%;
+        }
+        body {
+            /* 글씨 크기 16px */
+            font-size: 1.6rem;
+            height: 200rem;
+        }
+        div {
+            border: 2px dotted green;
+            margin: 2rem;
+            width: 14rem;
+            height: 14rem;
+        }
+        .child {
+            border: 3px dashed lightsalmon;
+            width: 11rem;
+            height: 11rem;
+            padding: 1rem;
+            margin: 1rem;
+            overflow: auto;
+        }
+        .child_relative {
+            position: relative;
+            top: 2rem;
+            left: 2rem;
+            border: 1px solid brown;
+        }
+        .child_absolute {
+            position: absolute;
+            top: 4rem;
+            left: 3rem;
+            background-color: cadetblue;
+        }
+        .child_fixed {
+            position: fixed;
+            top: 1rem;
+            left: 7rem;
+            background-color: beige;
+            border: 2px solid darkkhaki;
+        }
+    </style>
+</head>
+<body>
+    <h3>position</h3>
+    <p>웹문서 상에서 요소를 배치할 때 기존 흐름과 다르게 할 수 있는 속성</p>
+    <div>
+        <div class="child">
+            abcdefghijklmnopqr abcdefghijklmnopqr abcdefghijklmnopqr
+        </div>
+    </div>
+    <div>
+        <div class="child child_relative">
+            abcdefghijklmnopqr abcdefghijklmnopqr abcdefghijklmnopqr
+        </div>
+    </div>
+    <div>
+        <div class="child child_absolute">
+            abcdefghijklmnopqr abcdefghijklmnopqr abcdefghijklmnopqr
+        </div>
+    </div>
+    <div>
+        <div class="child child_fixed">
+            abcdefghijklmnopqr abcdefghijklmnopqr abcdefghijklmnopqr
+        </div>
+    </div>
+</body>
+</html>
