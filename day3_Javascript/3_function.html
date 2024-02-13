@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3 Function</title>
+    <script>
+        function myFuncA(x, y) {
+            let temp = x * 10 + y;
+            console.log("myFuncA 실행");
+            console.log("결과값 = " + temp);
+            return temp;
+        }
+
+        const myFuncB = function(x, y) {
+            let temp = x * 10 + y;
+            console.log("myFuncA 실행");
+            console.log("결과값 = " + temp);
+            return temp;
+        }
+
+        let myFuncC = (x, y) => {
+            let temp = x * 10 + y;
+            console.log("myFuncC 실행");
+            console.log("결과값 = " + temp);
+            return temp;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="myFuncA(2, 3)">myFuncA 실행하기</button>
+    <hr>
+    <button onclick="myFuncB(2, 3)">myFuncB 실행하기</button>
+    <hr>
+    <button onclick="myFuncC(2, 3)">myFuncC 실행하기</button>
+
+    <script>
+        let result = 0;
+        result = myFuncA(3,1);
+        console.log(`myFuncA(3,1) = ${result}`);
+        result = myFuncB(3,2);
+        console.log(`myFuncB(3,2) = ${result}`);
+        result = myFuncC(3,3);
+        console.log(`myFuncC(3,3) = ${result}`);
+    </script>
+</body>
+</html>

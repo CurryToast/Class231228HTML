@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4 Change Contents</title>
+    <script>
+        const change = function () {
+            const title = document.getElementById("title");
+            title.innerHTML = "환영합니다. <span style=\"color:red;\">Wellcome</span>!!!";
+        }
+    </script>
+</head>
+<body>
+    <h2 id="title">JS로 h2 요소의 컨텐츠를 변경합니다.</h2>
+    <button onclick="change()">실행하기</button>
+</body>
+</html>

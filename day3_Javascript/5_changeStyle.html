@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5 Change Style</title>
+    <script>
+        const change = function () {
+            const title = document.getElementById("title");
+            title.style.color = "green";
+            title.style.fontSize = "40px";
+            title.style.transitionDelay = "0.2s";
+            title.style.transitionDuration = "3s";
+            title.style.transformStyle = "smooth";
+        }
+
+        const toggle = function() {
+            const title = document.getElementById("title");
+
+            title.style.transitionDelay = "0.2s";
+            title.style.transitionDuration = "3s";
+            title.style.transformStyle = "smooth";
+
+            if (title.style.color == "black") {
+                title.style.color = "green";
+            } else {
+                title.style.color = "black";
+            }
+
+            if (title.style.fontSize == "1.5em") {
+                title.style.fontSize = "40px";
+            } else {
+                title.style.fontSize = "1.5em";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2 id="title">JS로 h2 요소의 스타일을 변경합니다.</h2>
+    <button onclick="toggle()">실행하기</button>
+</body>
+</html>
