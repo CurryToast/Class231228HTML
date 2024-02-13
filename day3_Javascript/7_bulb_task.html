@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7 Bulb Task</title>
+</head>
+<body>
+    <h3>현재 상태 : <span id="status" style="color: red;">OFF<span></h3>
+    <img src="images/image2.gif" alt="bulbOff" id="bulb">
+    <button id="on" onclick="bulbOn()">불을 켜주세요</button>
+    <button id="off" onclick="bulbOff()">불을 꺼주세요</button>
+</body>
+<script>
+    const stat = document.getElementById("status");
+    const bulb = document.getElementById("bulb");
+    const on = document.getElementById("on");
+    const off = document.getElementById("off");
+
+    off.disabled = true;
+
+    const bulbOn = function () {
+        bulb.src = "images/image1.gif";
+        bulb.alt = "bulbOn";
+        stat.innerHTML = "ON";
+        stat.style.color = "green";
+
+        on.disabled = true;
+        off.disabled = false;
+    }
+
+    const bulbOff = function() {
+        bulb.src = "images/image2.gif";
+        bulb.alt = "bulbOff";
+        stat.innerHTML = "OFF";
+        stat.style.color = "red";
+
+        on.disabled = false;
+        off.disabled = true;
+    }
+</script>
+</html>
