@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>17 Table</title>
+    <style>
+        table, th, td {
+            border: 1.2px solid black;
+        }
+
+        thead th {
+            min-width: 7rem;
+        }
+
+        th, td {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- table 태그로 시간표 예시 작성하면서 css도 적용 -->
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Tur</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>00:00 ~ 05:00</th>
+                <td colspan="7">취침</td>
+            </tr>
+            <tr>
+                <th>05:00 ~ 05:30</th>
+                <td rowspan="3">취침</td>
+                <td colspan="5">기상 및 세면</td>
+                <td rowspan="4">취침</td>
+            </tr>
+            <tr>
+                <th>05:30 ~ 07:00</th>
+                <td colspan="5">등원</td>
+            </tr>
+            <tr>
+                <th>07:00 ~ 08:00</th>
+                <td colspan="5">운동</td>
+            </tr>
+            <tr>
+                <th>08:00 ~ 09:00</th>
+                <td>기상 및 세면</td>
+                <td colspan="5">수업 준비</td>
+            </tr>
+            <tr>
+                <th>09:00 ~ 10:00</th>
+                <td>아침 식사</td>
+                <td rowspan="3" colspan="5">오전 수업</td>
+                <td>기상 및 세면</td>
+            </tr>
+            <tr>
+                <th>10:00 ~ 11:00</th>
+                <td>예배</td>
+                <td rowspan="2">아침 식사</td>
+            </tr>
+            <tr>
+                <th>11:00 ~ 12:00</th>
+                <td>커피 타임</td>
+            </tr>
+            <tr>
+                <th>12:00 ~ 13:00</th>
+                <td rowspan="4">자습</td>
+                <td colspan="5">점심 시간</td>
+                <td rowspan="4">자습</td>
+            </tr>
+            <tr>
+                <th>13:00 ~ 18:00</th>
+                <td colspan="5">오후 수업</td>
+            </tr>
+            <tr>
+                <th>18:00 ~ 19:00</th>
+                <td colspan="5">자습</td>
+            </tr>
+            <tr>
+                <th>19:00 ~ 20:30</th>
+                <td colspan="5">귀가</td>
+            </tr>
+            <tr>
+                <th>20:30 ~ 21:00</th>
+                <td colspan="7">목욕</td>
+            </tr>
+            <tr>
+                <th>21:30 ~ 22:00</th>
+                <td colspan="7">휴식</td>
+            </tr>
+            <tr>
+                <th>22:00 ~ 24:00</th>
+                <td colspan="7">취침</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

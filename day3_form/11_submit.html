@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11 Submit</title>
+</head>
+<body>
+    <p>사용자가 물품을 주문합니다. <br> 주문 품목과 수량을 입력합니다.</p>
+    <form action="success.html">
+        <input
+            type="text"
+            name="pcode"
+            placeholder="상품코드를 입력하세요."
+        >
+        <input
+            type="number"
+            name="quantity"
+            value="1"
+            placeholder="주문 수량을 입력하세요."
+        >
+        <button>주문</button>
+    </form>
+</body>
+<!--
+    JSP에서는 form 태그의 method 속성값을 post(저장) 로 하면
+    사용자가 입력한 값이 url에 안보입니다.
+    지금은 method 속성의 기본값이 get(조회) 입니다.
+-->
+</html>
