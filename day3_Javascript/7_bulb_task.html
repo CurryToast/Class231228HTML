@@ -5,18 +5,33 @@
     <title>7 Bulb Task</title>
 </head>
 <body>
-    <h3>현재 상태 : <span id="status" style="color: red;">OFF<span></h3>
-    <img src="images/image2.gif" alt="bulbOff" id="bulb">
-    <button id="on" onclick="bulbOn()">불을 켜주세요</button>
-    <button id="off" onclick="bulbOff()">불을 꺼주세요</button>
+    <h3>
+        현재 상태 :
+        <span id="status" style="color: red;"></span>
+    </h3>
+    <div style="display: flex;">
+        <img
+            src="images/image2.gif"
+            alt="bulbOff" id="bulb"
+            style="cursor: pointer;"
+            onclick="bulbOnOff()"
+            title="전구를 클릭해서 켜거나 끄세요."
+        >
+        <div style="display: flex; flex-direction: column; justify-content: flex-end;">
+            <button id="on" onclick="bulbOn()">
+                불을 켜주세요
+            </button>
+            <button id="off" onclick="bulbOff()">
+                불을 꺼주세요
+            </button>
+        </div>
+    </div>
 </body>
 <script>
     const stat = document.getElementById("status");
     const bulb = document.getElementById("bulb");
     const on = document.getElementById("on");
     const off = document.getElementById("off");
-
-    off.disabled = true;
 
     const bulbOn = function () {
         bulb.src = "images/image1.gif";
@@ -37,5 +52,15 @@
         on.disabled = false;
         off.disabled = true;
     }
+
+    const bulbOnOff = function() {
+        if (stat.innerHTML == "ON") {
+            bulbOff();
+        } else {
+            bulbOn();
+        }
+    }
+
+    bulbOff();
 </script>
 </html>
