@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10 ForEach</title>
+</head>
+<body>
+    <pre style="font-size: 1.2rem; font-family: inherit;">
+    <script>
+        const names = ['사나', '쯔위', '모모', '다현', '나연'];
+        names.sort();
+
+        document.write('<div style="border: 1px solid black;">');
+        names.forEach((item, index, array) => {
+            document.writeln(`item = ${item}`);
+            document.writeln(`index = ${index}`);
+            document.writeln(`array = ${array}`);
+        });
+        document.writeln('</div>');
+
+        document.write('<div style="border: 1.2px dashed green;">');
+        names.forEach((item, index) => {
+            document.writeln(`item = ${item}`);
+            document.writeln(`index = ${index}`);
+        });
+        document.writeln('</div>');
+
+        document.write('<div style="border: 1.2px dashed blue;">');
+        names.forEach(item => {
+            document.writeln(`item = ${item}`);
+        });
+        document.writeln('</div>');
+
+        document.write('<div style="border: 1.2px dotted gray;">');
+        const callb = (item) => document.write(item);
+        names.forEach(callb);
+        document.writeln('</div>');
+    </script>
+    </pre>
+</body>
+</html>
