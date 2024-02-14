@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>15 DOM Schedule</title>
+    <style>
+        table {
+            width: 800px;
+        }
+
+        th {
+            width: 13%;
+            color: white;
+            background-color: tomato;
+        }
+
+        th, td {
+            border: 1px solid tomato;
+            padding: 7px 12px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        const time = ['TIME', '09:00', '11:00', '12:30', '14:00', '16:45'];
+        const todo = ['TODO', '수업', '과제', '점심식사', '주간회의', '자료조사'];
+    </script>
+</head>
+<body>
+    <h3>오늘의 스케줄</h3>
+    <table>
+        <tr id="time">
+        </tr>
+        <tr id="todo">
+        </tr>
+    </table>
+</body>
+<script>
+    const makeTable = () => {
+        const tmtr = document.querySelector('#time');
+        const tdtr = document.querySelector('#todo');
+
+        // 첫번째 행
+        const [timeHeader, ...timeBody] = time;
+        const tmth = document.createElement('th');
+        tmth.innerHTML = timeHeader;
+        tmtr.appendChild(tmth);
+        timeBody.forEach(val => {
+            const tmtd = document.createElement('td');
+            tmtd.innerHTML = val;
+            tmtr.appendChild(tmtd);
+        })
+
+        // 두번째 행
+        const [todoHeader, ...todoBody] = todo;
+        const tdth = document.createElement('th');
+        tdth.innerHTML = todoHeader;
+        tdtr.appendChild(tdth);
+        todoBody.forEach(val => {
+            const tdtd = document.createElement('td');
+            tdtd.innerHTML = val;
+            tdtr.appendChild(tdtd);
+        });
+    }
+
+    makeTable();
+</script>
+</html>

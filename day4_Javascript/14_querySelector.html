@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>14 querySelector</title>
+    <style>
+        tr {
+            color: blue;
+            font-weight: 800;
+        }
+
+        tr:last-child {
+            font-size: 1.2rem;
+        }
+
+        #eunha {
+            color: tomato;
+        }
+
+        .viviz {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td>사나</td>
+            </tr>
+            <tr>
+                <td>나연</td>
+            </tr>
+            <tr>
+                <td id="eunha" class="viviz">
+                    은하
+                </td>
+            </tr>
+            <tr>
+                <td class="viviz">
+                    신비
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+    const trOne = document.querySelector('tr');
+    console.log(trOne);
+
+    const trMany = document.querySelectorAll('tr');
+    console.log(trMany);
+
+    const tdOne = document.querySelector('#eunha');
+    console.log(tdOne);
+
+    const tdMany = document.querySelectorAll('.viviz');
+    console.log(tdMany);
+
+    const tr1 = document.querySelector('tr:first-child');
+    console.log(tr1);
+    const newtd = document.createElement("td");	// 지정된 이름의 태그 요소 만들기
+    newtd.innerHTML='테스트1';
+    tr1.appendChild(newtd); // tr1 변수로 지정된 요소의 마지막 자식 요소로 추가하기
+
+    const tr2 = document.querySelector('tr:nth-child(2)');
+    console.log(tr2);
+    const newtd2 = document.createElement("td");
+    newtd2.innerHTML='테스트2';
+    tr2.appendChild(newtd2);
+
+    // tr 태그 중 마지막 자식 요소 선택하여 새로운 td 내용을 '테스트3'으로 추가
+    const lastTr = document.querySelector('tr:last-child');
+    console.log(lastTr);
+    const lastTd = document.createElement("td");
+    lastTd.innerHTML = "테스트3";
+    lastTr.appendChild(lastTd);
+</script>
+</html>
