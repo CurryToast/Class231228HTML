@@ -8,10 +8,19 @@
             width: 800px;
         }
 
-        th {
+        hr {
+            width: 800px;
+            margin: 8px 0;
+        }
+
+        #horizontal th, #vertical thead > tr:first-child td {
             width: 13%;
             color: white;
             background-color: tomato;
+        }
+
+        #vertical thead > tr:first-child td {
+            font-weight: 900;
         }
 
         th, td {
@@ -27,11 +36,16 @@
 </head>
 <body>
     <h3>오늘의 스케줄</h3>
-    <table>
+    <table id="horizontal">
         <tr id="time">
         </tr>
         <tr id="todo">
         </tr>
+    </table>
+    <hr>
+    <table id="vertical">
+        <thead></thead>
+        <tbody></tbody>
     </table>
 </body>
 <script>
@@ -61,7 +75,36 @@
             tdtr.appendChild(tdtd);
         });
     }
-
     makeTable();
+
+    const makeReverseTable = () => {
+        const [timeHeader, ...timeBody] = time;
+        const [todoHeader, ...todoBody] = todo;
+        const vtHead = document.querySelector('#vertical thead');
+        const vtBody = document.querySelector('#vertical tbody');
+
+        let tr = document.createElement('tr');
+        let td = document.createElement('td');
+        td.innerHTML = timeHeader;
+        tr.appendChild(td);
+        td = document.createElement('td');
+        td.innerHTML = todoHeader;
+        tr.appendChild(td);
+        vtHead.appendChild(tr);
+
+        for(let i = 0; i < timeBody.length; i++) {
+            tr = document.createElement('tr');
+            td = document.createElement('td');
+            td.innerHTML = timeBody[i];
+            tr.appendChild(td);
+            td = document.createElement('td');
+            td.innerHTML = todoBody[i];
+            tr.appendChild(td);
+
+            vtBody.appendChild(tr);
+        }
+    }
+
+    makeReverseTable();
 </script>
 </html>
