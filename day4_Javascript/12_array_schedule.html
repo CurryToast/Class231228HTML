@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12 Array Schedule</title>
+    <style>
+        table {
+            width: 800px;
+        }
+
+        th {
+            width: 13%;
+            color: white;
+            background-color: tomato;
+        }
+
+        th, td {
+            border: 1px solid tomato;
+            padding: 7px 12px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        const time = ['TIME', '09:00', '11:00', '12:30', '14:00', '16:45'];
+        const todo = ['TODO', '수업', '과제', '점심식사', '주간회의', '자료조사'];
+    </script>
+</head>
+<body>
+    <h3>오늘의 스케줄</h3>
+    <table>
+        <tr id="time">
+        </tr>
+        <tr id="todo">
+        </tr>
+    </table>
+</body>
+<script>
+    const makeTable = () => {
+        // 첫번째 행
+        const [timeHeader, ...timeBody] = time;
+        let result = `<th>${timeHeader}</th>`;
+        timeBody.forEach(val => {
+            result += `<td>${val}</td>`;
+        })
+        document.getElementById('time').innerHTML = result;
+
+        // 두번째 행
+        const [todoHeader, ...todoBody] = todo;
+        result = `<th>${todoHeader}</th>`;
+        todoBody.forEach(val => {
+            result += `<td>${val}</td>`;
+        });
+        document.getElementById('todo').innerHTML = result;
+    }
+
+    makeTable();
+</script>
+</html>
