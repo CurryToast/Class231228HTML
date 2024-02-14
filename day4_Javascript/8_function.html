@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8 Function</title>
+    <script>
+        // 아래 세 가지 형식에 대해 호출 시 다른 점이 있습니다.
+
+        // 이 위치는 함수가 정의되기 전 입니다.
+        // function 함수이름() {} 형식으로 정의된 함수는 hoisting을 하여 함수 정의 전에도 호출 가능합니다.
+        let result = 0;
+        result = myFuncA(3,1);
+        console.log(`@@@ myFuncA(3,1) = ${result}`);
+        // result = myFuncB(3,2);
+        // console.log(`@@@ myFuncB(3,2) = ${result}`);
+        // result = myFuncC(3,3);
+        // console.log(`@@@ myFuncC(3,3) = ${result}`);
+
+        function myFuncA(x, y) {
+            let temp = x * 10 + y;
+            console.log("myFuncA 실행");
+            console.log("결과값 = " + temp);
+            return temp;
+        }
+
+        const myFuncB = function(x, y) {
+            let temp = x * 10 + y;
+            console.log("myFuncA 실행");
+            console.log("결과값 = " + temp);
+            return temp;
+        }
+
+        let myFuncC = (x, y) => {
+            let temp = x * 10 + y;
+            console.log("myFuncC 실행");
+            console.log("결과값 = " + temp);
+            return temp;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="myFuncA(2, 3)">myFuncA 실행하기</button>
+    <hr>
+    <button onclick="myFuncB(2, 3)">myFuncB 실행하기</button>
+    <hr>
+    <button onclick="myFuncC(2, 3)">myFuncC 실행하기</button>
+
+    <script>
+        // 이 위치는 함수 정의 이후이므로 함수 호출에 아무 문제가 없습니다.
+        result = myFuncA(3,1);
+        console.log(`### myFuncA(3,1) = ${result}`);
+        result = myFuncB(3,2);
+        console.log(`### myFuncB(3,2) = ${result}`);
+        result = myFuncC(3,3);
+        console.log(`### myFuncC(3,3) = ${result}`);
+    </script>
+</body>
+</html>
