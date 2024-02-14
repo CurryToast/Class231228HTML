@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11 Array Task</title>
+</head>
+<body>
+    <h3>요소의 집합을 다루게 되는 예시</h3>
+    <ul>
+        <li>사나</li>
+        <li>다현</li>
+        <li>모모</li>
+        <li>나연</li>
+        <li>쯔위</li>
+    </ul>
+</body>
+<script>
+    const lis = document.getElementsByTagName('li');
+    console.log(lis);
+    const liArr = [...lis];
+    console.log(liArr);
+    liArr.forEach(item => {
+        if (item.innerHTML == '모모') {
+            item.style.color = 'red';
+        }
+
+        if (item.innerHTML == '다현') {
+            item.innerHTML = 'dahyeon';
+        }
+
+        document.write(`<p style="margin: 0;">li 요소 내용 = ${item.innerHTML}</p>`);
+    });
+</script>
+</html>
