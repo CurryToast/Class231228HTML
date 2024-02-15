@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>16 getElement</title>
+</head>
+<body>
+    <table>
+        <tr class="twice">
+            <td>사나</td>
+        </tr>
+        <tr class="twice">
+            <td>모모</td>
+        </tr>
+        <tr class="twice">
+            <td>다현</td>
+        </tr>
+        <tr class="twice">
+            <td>나연</td>
+        </tr>
+        <tr class="twice">
+            <td>쯔위</td>
+        </tr>
+        <tr>
+            <td>MoMo</td>
+        </tr>
+    </table>
+    <script>
+        const twice1 = document.getElementsByTagName('tr'); // 리턴 타입 : HTMLCollection => forEach 사용 불가능
+        const twice2 = document.getElementsByClassName('twice'); // 리턴 타입 : HTMLCollection => forEach 사용 불가능
+        const twice3 = document.querySelectorAll('tr'); // 리턴 타입 : NodeList => forEach 사용 가능
+        const twice4 = document.querySelectorAll('.twice'); // 리턴 타입 : NodeList => forEach 사용 가능
+        console.log(twice1);
+        console.log(twice2);
+        console.log(twice3);
+        console.log(twice4);
+
+        twice3.forEach((element, index) => { console.log(`twice3[${index}] = ${element.innerHTML}`); });
+        twice4.forEach((element, index) => { console.log(`twice4[${index}] = ${element.innerHTML}`); });
+    </script>
+</body>
+</html>
