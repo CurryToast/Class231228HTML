@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>20 Object</title>
+</head>
+<body>
+    <h3>자바스크립트의 오브젝트</h3>
+    <ul>
+        <li> 자바스크립트의 객체를 정의하기 : 기호 {} </li>
+        <li>
+            <p>자바에서는 객체의 구성 요소</p>
+            <ul>
+                <li>속성과 메소드</li>
+                <li>자바스크립트는 구성 요소를 미리 정의하지 않는 프로토타입 기반입니다.</li>
+                <li>☞ 구성요소인 속성과 메소드의 추가를 쉽게 할 수 있습니다.</li>
+            </ul>
+        </li>
+    </ul>
+    <pre style="font-size: 1.2rem; font-family: inherit;">
+        <script>
+            // 객체 리터럴 const 변수 sana에 대입
+            const sana = { name: '사나', age: 23, address: '경기' };
+            document.writeln(`\nsana 이름 : ${sana.name}`);
+            document.writeln(`sana 나이 : ${sana.age}`);
+            document.writeln(`sana 지역 : ${sana.address}`);
+            document.writeln(`sana : ${sana}`);
+            // console.log(sana);
+            sana.heigth = 172;
+            // console.log(sana);
+
+            // 객체의 메소드는 함수 리터럴로 정의합니다.
+            // 새로운 속성이름은 hello, 그리고 값은 함수 => hello는 메소드가 됩니다.
+            sana.hello = function () {
+                alert(`${this.name}는 ${this.age}살이고 ${this.address}에서 산다.`);
+            };
+            // sana.hello();
+            sana.name = 'sanaaaaaa';
+            // sana.hello();
+
+            const momo = {};
+            momo.color = 'red';
+
+            const objarr = [momo, sana];
+            console.log(objarr);
+        </script>
+        <!-- 공공데이터 rest api에서 받는 데이터 형식 중 하나가 자바스크립트 객체와 변환되는 json 문자열입니다. -->
+        <!-- rest api는 데이터를 전송발을때 사용하는 하나의 규칙입니다. -->
+        <!--    - 서버의 주소, 파라미터(요청값), METHOD, 자원의 위치(url에 포함)를 요청하면 -->
+        <!--        xml 또는 JSON 형태의 데이터를 응답해 줍니다. -->
+        <!--    rest api의 요청을 자바스크립트의 비동기 통신 방식으로 보냅니다. -->
+        <!--        비동기 통신은 백그라운드에서 요청을 보냅니다. -->
+    </pre>
+</body>
+</html>
