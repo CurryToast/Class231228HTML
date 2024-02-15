@@ -39,6 +39,11 @@
             margin: 4px 0;
         }
 
+        input[type=text]::placeholder,
+        input[type=number]::placeholder {
+            font-size: 0.9rem;
+        }
+
         /* 체크박스 중에 checked(상태) - 상태요소 선택은 기호 :
            + 기호 : 바로 뒤의 인접 형제 1개 선택합니다.
         */
@@ -72,7 +77,7 @@
                     min="20"
                     max="100"
                     value="70"
-                    placeholder="나이를 입력하세요"
+                    placeholder="나이(20~100)를 입력하세요."
                 >
             </li>
             <li>
