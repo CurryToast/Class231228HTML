@@ -53,7 +53,8 @@
                 type="number"
                 name="age"
                 id=""
-                min="0"
+                min="20"
+                max="100"
                 placeholder="나이를 입력하세요."
             >
         </li>
@@ -128,6 +129,12 @@
             if (!age.value) {
                 alert('나이를 입력하세요.');
                 age.focus();
+                return;
+            } else if (
+                age.value < 20 ||
+                age.value > 100
+            ) {
+                alert(`나이(${age.value})가 유효값이 아닙니다.`);
                 return;
             }
 
