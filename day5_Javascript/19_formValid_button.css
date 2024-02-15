@@ -1,0 +1,65 @@
+ul {
+    padding-left: 3px;
+}
+
+li {
+    list-style: none;
+}
+
+li:last-child {
+    margin-top: 12px;
+}
+
+input,
+label,
+button {
+    font-size: 1.2rem;
+}
+
+li > div {
+    display: inline-block;
+}
+
+li > div.error::after {
+    content: attr(data-msg);
+    display: inline-block;
+    color: red;
+}
+
+li > fieldset.error::after {
+    content: attr(data-msg);
+    display: block;
+    color: red;
+}
+
+li > fieldset {
+    width: fit-content;
+    margin-top: 4px;
+    margin-left: 0;
+}
+
+/* px 는 절대값 단위 */
+input[type=text],
+input[type=number] {
+    width: 200px;
+    padding: 4px 8px;
+    margin: 4px 0;
+}
+
+input[type=text]::placeholder,
+input[type=number]::placeholder {
+    font-size: 0.9rem;
+}
+
+/* 체크박스 중에 checked(상태) - 상태요소 선택은 기호 :
+   + 기호 : 바로 뒤의 인접 형제 1개 선택합니다.
+*/
+input[type=checkbox]:checked+label {
+    color: blue;
+    font-weight: 900;
+}
+
+/* 초점을 있는 상태에 대한 선택자  - :focus */
+input[type=checkbox]:focus {
+    outline: 2px solid blue;
+}

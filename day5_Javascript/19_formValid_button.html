@@ -6,79 +6,34 @@
     <title>19 Form Valid - Button</title>
     <!-- 가상요소 선택자 :    ::marker , ::before , ::after -->
     <!-- 입력 요소에 대한 선택자 연습 -->
-    <style>
-        ul {
-            padding-left: 3px;
-        }
-        
-        li {
-            list-style: none;
-        }
+    <link rel="stylesheet" href="19_formValid_button.css">
 
-        li:last-child {
-            margin-top: 12px;
-        }
-
-        input,
-        label,
-        button {
-            font-size: 1.2rem;
-        }
-
-        li > fieldset {
-            width: fit-content;
-            margin-top: 4px;
-            margin-left: 0;
-        }
-
-        /* px 는 절대값 단위 */
-        input[type=text],
-        input[type=number] {
-            width: 200px;
-            padding: 4px 8px;
-            margin: 4px 0;
-        }
-
-        input[type=text]::placeholder,
-        input[type=number]::placeholder {
-            font-size: 0.9rem;
-        }
-
-        /* 체크박스 중에 checked(상태) - 상태요소 선택은 기호 :
-           + 기호 : 바로 뒤의 인접 형제 1개 선택합니다.
-        */
-        input[type=checkbox]:checked+label {
-            color: blue;
-            font-weight: 900;
-        }
-
-        /* 초점을 있는 상태에 대한 선택자  - :focus */
-        input[type=checkbox]:focus {
-            outline: 2px solid blue;
-        }
-    </style>
 </head>
 
 <body>
     <form action="success.html">
         <ul>
             <li>
-                <input
-                    type="text"
-                    name="name" id=""
-                    value="홍길동"
-                    placeholder="이름을 입력하세요"
-                >
+                <div>
+                    <input
+                        type="text"
+                        name="name" id=""
+                        value="홍길동"
+                        placeholder="이름을 입력하세요"
+                    >
+                </div>
             </li>
             <li>
-                <input
-                    type="number"
-                    name="age" id=""
-                    min="20"
-                    max="100"
-                    value="70"
-                    placeholder="나이(20~100)를 입력하세요."
-                >
+                <div>
+                    <input
+                        type="number"
+                        name="age" id=""
+                        min="20"
+                        max="100"
+                        value="70"
+                        placeholder="나이(20~100)를 입력하세요."
+                    >
+                </div>
             </li>
             <li>
                 <fieldset>
@@ -106,47 +61,7 @@
             </li>
         </ul>
     </form>
-    <script>
-        const save = () => {
-            const name = document.querySelector('input[name="name"]');
-            const age = document.querySelector('input[name="age"]');
-            const temp = document.querySelectorAll('input[type="checkbox"]');
-            const hobbies = document.querySelectorAll('input[name="hobby"]:checked');
-            temp.forEach((ele, i) => console.log('checkbox', i, '=', ele.value));
-
-            let isValid = true;
-
-            if (name.value == '') {
-                alert('이름을 입력하세요');
-                name.focus();
-                isValid = false;
-            } else if (age.value == '') {
-                alert('나이를 입력하세요');
-                age.focus();
-                isValid = false;
-            } else if (age.value < 20 || age.value > 100) {       //유효값 위배되는 조건식
-                alert('나이 유효값이 아닙니다.');
-                age.focus();
-                isValid = false;
-            } else if (hobbies.length == 0) {
-                alert('취미가 없으면 저장을 못해요~');
-                document.getElementById('swimming').focus();
-                isValid = false;
-            }
-
-            if (isValid) {
-                const hobbArr = []      //변수 선언 위치 주의하세요.
-                hobbies.forEach(ele => {
-                    // console.log(ele.value)
-                    hobbArr.push(ele.value);
-                })
-
-                if (confirm(`${name.value}님(${age.value})이 선택한 취미는 ${hobbArr.join(',')} 입니다. 저장하시겠습니까?`)) {
-                    document.forms[0].submit();
-                }
-            }
-        }
-    </script>
 </body>
+<script src="19_formValid_button.js"></script>
 
 </html>
