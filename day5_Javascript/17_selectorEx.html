@@ -28,6 +28,10 @@
             margin: 4px 0;
         }
 
+        input[type=checkbox]:focus {
+            outline: 1px solid blue;
+        }
+
         input[type=checkbox]:checked + label {
             color: blue;
             font-weight: 900;
@@ -118,6 +122,7 @@
         const save = () => {
             const name = document.querySelector("input[name='name']");
             const age = document.querySelector("input[name='age']");
+            const Hobbies = document.querySelectorAll("input[name='hobby']");
             const checkedHobbies = document.querySelectorAll("input[name='hobby']:checked + label");
 
             if (!name.value) {
@@ -135,6 +140,12 @@
                 age.value > 100
             ) {
                 alert(`나이(${age.value})가 유효값이 아닙니다.`);
+                return;
+            }
+
+            if (checkedHobbies.length == 0) {
+                alert('님 취미 없음?');
+                Hobbies[0].focus();
                 return;
             }
 
