@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>18 Form Valid - Submit</title>
+    <!-- 가상요소 선택자 :    ::marker , ::before , ::after -->
+    <!-- 입력 요소에 대한 선택자 연습 -->
+    <style>
+        ul {
+            padding-left: 3px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        li:last-child {
+            margin-top: 12px;
+        }
+
+        input,
+        label,
+        button {
+            font-size: 1.2rem;
+        }
+
+        li > fieldset {
+            width: fit-content;
+            margin-top: 4px;
+            margin-left: 0;
+        }
+
+        /* px 는 절대값 단위 */
+        input[type=text],
+        input[type=number] {
+            width: 200px;
+            padding: 4px 8px;
+            margin: 4px 0;
+        }
+
+        /* 체크박스 중에 checked(상태) - 상태요소 선택은 기호 :
+           + 기호 : 바로 뒤의 인접 형제 1개 선택합니다.
+        */
+        input[type=checkbox]:checked+label {
+            color: blue;
+            font-weight: 900;
+        }
+
+        /* 초점을 있는 상태에 대한 선택자  - :focus */
+        input[type=checkbox]:focus {
+            outline: 2px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <form
+        action="success.html"
+        onsubmit="return save()"
+    >
+        <ul>
+            <li>
+                <input
+                    type="text"
+                    name="name" id=""
+                    value="홍길동"
+                    placeholder="이름을 입력하세요"
+                >
+            </li>
+            <li>
+                <input
+                    type="number"
+                    name="age" id=""
+                    min="20"
+                    max="100"
+                    value="70"
+                    placeholder="나이를 입력하세요"
+                >
+            </li>
+            <li>
+                <fieldset>
+                    <legend>취미를 선택하세요</legend>
+                    <input type="checkbox" name="hobby" id="swimming" value="수영">
+                    <label for="swimming">수영</label>
+                    <input type="checkbox" name="hobby" id="ski" value="스키">
+                    <label for="ski">스키</label>
+                    <input type="checkbox" name="hobby" id="football" value="축구">
+                    <label for="football">축구</label>
+                    <input type="checkbox" name="hobby" id="baseball" value="야구">
+                    <label for="baseball">야구</label>
+                    <input type="checkbox" name="hobby" id="running" value="달리기">
+                    <label for="running">달리기</label>
+                </fieldset>
+            </li>
+            <li>
+                <!-- button의 type은 기본값 submit (form 태그 있을 때) -->
+                <button>저장하기</button>
+            </li>
+        </ul>
+    </form>
+    <script>
+        const save = () => {
+            const name = document.querySelector('input[name="name"]');
+            const age = document.querySelector('input[name="age"]');
+            const temp = document.querySelectorAll('input[type="checkbox"]');
+            const hobbies = document.querySelectorAll('input[name="hobby"]:checked');
+            temp.forEach((ele, i) => console.log('checkbox', i, '=', ele.value));
+
+            if (name.value == '') {
+                alert('이름을 입력하세요');
+                name.focus();
+                return false;    //함수 종료
+            }
+
+            if (age.value == '') {
+                alert('나이를 입력하세요');
+                age.focus();
+                return false;    //함수 종료
+            } else if (age.value < 20 || age.value > 100) {       //유효값 위배되는 조건식
+                alert('나이 유효값이 아닙니다.');
+                age.focus();
+                return false;
+            }
+
+            if (hobbies.length == 0) {
+                alert('취미를 제발 하나만 선택해주세요.!!');
+                document.getElementById('swimming').focus();
+                return false;
+            }
+
+            const hobbArr = []      //변수 선언 위치 주의하세요.
+            hobbies.forEach(ele => {
+                // console.log(ele.value)
+                hobbArr.push(ele.value);
+            })
+
+            return confirm(`${name.value}님(${age.value})이 선택한 취미는 ${hobbArr.join(',')} 입니다. 저장하시겠습니까?`);
+        }
+    </script>
+</body>
+
+</html>
