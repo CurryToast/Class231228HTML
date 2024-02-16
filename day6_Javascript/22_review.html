@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>22 Review</title>
+</head>
+<body>
+    <h3>21번 예제 파일 복습</h3>
+    <pre style="font-size: 1rem; font-family: inherit;">
+        <script>
+            const schedules = [
+                { time: '09:00', todo: '수업' },
+                { time: '11:00', todo: '과제' },
+                { time: '12:30', todo: '점심식사' },
+                { time: '14:00', todo: '주간회의' },
+                { time: '16:45', todo: '자료조사' }
+            ];
+
+            console.log(schedules[0]);
+            document.writeln('\n<h4>forEach 메소드로 반복하기</h4>');
+            schedules.forEach((el, i) => {
+                document.writeln(`schedules[${i}] : { time: ${el.time}, todo: ${el.todo} }`);
+            });
+
+            const times = ['16:00','19:00','12:30', '09:00', '11:45'];
+            const todos = ['젤다의 전설', '발더스게이트3', '스타필드', '엘든링', '디아블로4'];
+
+            times.sort(); // 문자열 정렬은 사전순 a에서 z, 가에서 힣, 0에서 9
+            document.writeln('times 정렬 결과 = ', times);
+            todos.sort();
+            document.writeln('todos 정렬 결과 = ', todos);
+
+            // 객체의 전설은 기준 속성을 무엇으로 할 것인지 직접 함수로 구현해줍니다.
+            schedules.sort((a, b) => {
+                // 비교 속성에 대한 조건식
+                if (a.time < b.time) { // 시간 순서로 정렬한다면
+                    return -1; // 오름차순
+                } else {
+                    return 1; // 내림차순
+                }
+            });
+            document.writeln('schedules 정렬 결과');
+            schedules.forEach((el, i) => {
+                document.writeln(`schedules[${i}] : { time: ${el.time}, todo: ${el.todo} }`);
+            });
+        </script>
+    </pre>
+</body>
+</html>
