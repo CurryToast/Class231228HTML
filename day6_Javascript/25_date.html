@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>25 Date</title>
+    <style>
+        pre {
+            font-size: 1.2rem;
+            font-family: inherit;
+            margin: 0 auto;
+        }
+
+        pre h4 {
+            margin: 0 auto;
+        }
+
+        pre h4:not(:first-of-type) {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h3>자바스크립트의 Date 객체</h3>
+    <hr>
+    <pre>
+        <script>
+            document.write('<h4>현재 날짜와 시간</h4>');
+            let today = new Date();
+            console.log(today);
+            document.write(`<div>${today}</div>`);
+            // Locale : 운영체제에 설정된 국가/언어 와 관련된 정보 en-US, ko-KR로 설정하기도 합니다.
+            //          현지 시간을 현지 형식에 맞게 출력.
+            document.write(`<div>toLocaleString = ${today.toLocaleString()}</div>`);
+            document.write(`<div>toLocaleDateString en-US = ${today.toLocaleDateString('en-US', {
+                year: 'numeric', month: '2-digit', day: '2-digit'
+            })}</div>`);
+            document.write(`<div>toLocaleDateString en-UK = ${today.toLocaleDateString('en-UK', {
+                year: 'numeric', month: '2-digit', day: '2-digit'
+            })}</div>`);
+            document.write(`<div>toLocaleDateString ko-KR = ${today.toLocaleDateString('ko-KR', {
+                year: 'numeric', month: '2-digit', day: '2-digit'
+            })}</div>`);
+            document.write(`<div>toLocaleDateString zh-CN = ${today.toLocaleDateString('zh-CN', {
+                year: 'numeric', month: '2-digit', day: '2-digit'
+            })}</div>`);
+
+            document.write('<h4>표준시간 출력</h4>');
+            document.write(`<div>toTUCString = ${today.toUTCString()}</div>`);
+            document.write(`<div>toISOString = ${today.toISOString()}</div>`);
+
+            document.write('<h4>날짜 및 시간 메소드</h4>');
+            document.write(`<div>년도 = ${today.getFullYear()}</div>`);
+            document.write(`<div>월 = ${today.getMonth()}</div>`); // 월은 0~11 범위
+            document.write(`<div>일 = ${today.getDate()}</div>`);
+            document.write(`<div>요일 = ${today.getDay()}</div>`); // 요일은 0~6, 0이 일요일
+            document.write(`<div>시 = ${today.getHours()}</div>`);
+            document.write(`<div>분 = ${today.getMinutes()}</div>`);
+            document.write(`<div>초 = ${today.getSeconds()}</div>`);
+
+            document.write('<h4>날짜 및 시간 SET 메소드</h4>');
+            today.setFullYear(today.getFullYear() + 3);
+            document.write(`<div>getFullYear() + 3 => ${today}</div>`);
+
+            let myBirthDay = new Date('1995-07-12');
+            document.write(`<div>myBirthDay 요일 = ${myBirthDay.getDay()}</div>`);
+            myBirthDay.setFullYear(myBirthDay.getFullYear() + 27996);
+            document.write(`<div>myBirthDay.getFullYear() + 27996 요일 = ${myBirthDay.getDay()}</div>`);
+
+            // document.write(`<div></div>`);
+
+            document.write('<h4></h4>');
+            document.write('<h4></h4>');
+            document.write('<h4></h4>');
+        </script>
+    </pre>
+</body>
+</html>
