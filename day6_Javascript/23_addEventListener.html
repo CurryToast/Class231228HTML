@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>23 addEventListener</title>
+</head>
+<body>
+    <h3>이벤트 핸들러 메소드 addEventListener</h3>
+    <hr>
+    <!-- 이벤트 처리방법 1 -->
+    <button onclick="hello()">Hello</button>
+    <!-- 이벤트 처리방법 2 -->
+    <button id="hi">Hi</button>
+    <hr>
+    <input type="text" id="message" placeholder="메세지를 입력하세요.">
+    <pre style="font-size: 1rem; font-family: inherit;">
+        <script>
+            function hello() {
+                alert("hello");
+                console.log('클릭 이벤트에 대한 함수입니다.');
+            }
+
+            document.getElementById("hi").addEventListener('click', () => {
+                alert("Hi");
+                console.log("button 태그에 자바스크립트 코드를 작성하지 않고 이벤트 처리합니다.");
+            });
+
+            document.getElementById('message').addEventListener('change', (e) => {
+                console.log(e.target.value);
+            });
+
+            document.getElementById('message').addEventListener('keyup', (e) => {
+                console.log(e.target.value);
+            });
+
+            document.getElementById('message').addEventListener('keydown', (e) => {
+                console.log(e.target.value);
+            });
+        </script>
+    </pre>
+</body>
+</html>
