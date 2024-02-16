@@ -45,7 +45,7 @@
             })}</div>`);
 
             document.write('<h4>표준시간 출력</h4>');
-            document.write(`<div>toTUCString = ${today.toUTCString()}</div>`);
+            document.write(`<div>toUTCString = ${today.toUTCString()}</div>`);
             document.write(`<div>toISOString = ${today.toISOString()}</div>`);
 
             document.write('<h4>날짜 및 시간 메소드</h4>');
@@ -62,9 +62,9 @@
             document.write(`<div>getFullYear() + 3 => ${today}</div>`);
 
             let myBirthDay = new Date('1995-07-12');
-            document.write(`<div>myBirthDay 요일 = ${myBirthDay.getDay()}</div>`);
+            document.write(`<div>myBirthDay = ${myBirthDay}</div>`);
             myBirthDay.setFullYear(myBirthDay.getFullYear() + 27996);
-            document.write(`<div>myBirthDay.getFullYear() + 27996 요일 = ${myBirthDay.getDay()}</div>`);
+            document.write(`<div>myBirthDay.getFullYear() + 27996 = ${myBirthDay.get}</div>`);
 
             // document.write(`<div></div>`);
 

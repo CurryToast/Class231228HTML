@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>26 DateForm</title>
+</head>
+<body>
+    <h3>날짜 형식을 다루는 input 예제입니다.</h3>
+    <hr>
+    <form action="">
+        <label for="night">숙박일수</label>
+        <select name="days" id="night">
+            <option value="0">선택</option>
+            <option value="1">1박</option>
+            <option value="2">2박</option>
+            <option value="3">3박</option>
+            <option value="4">4박</option>
+        </select>
+        <br>
+        <label for="enterDate">입실날짜</label>
+        <input type="date" name="start" id="enterDate">
+        <br>
+        <label for="outDate">퇴실날짜</label>
+        <input type="date" name="end" id="outDate" disabled>
+        <br>
+    </form>
+    <script>
+        // form은 document의 하위 객체입니다.
+        // 여러개의 form을 가질 수 있으므로 배열 forms 이용하여 입력 요소값을 가져올 수 있습니다.
+        const night = document.forms[0].days; // name 속성값 사용
+        const start = document.forms[0].start;
+        const end = document.forms[0].end;
+
+        // 날짜를 전달하면 yyyy-mm-dd 패턴의 문자열로 리턴해주는 함수
+        function dateFormat(vdate) { // vdate: 날짜 타입 인자
+            const year = vdate.getFullYear();
+            const month = (vdate.getMonth() + 1).toString().padStart(2, '0');
+            const day = vdate.getDate().toString().padStart(2, '0');
+
+            return [year,month,day].join('-');
+        }
+
+        // 날짜 초기화
+        // 입실날짜의 기본값은 '오늘'
+        // 입실날짜는 '오늘'부터 3개월 후 까지만 선택 가능
+        const initialize = () => {
+            let today = new Date(); // 입실 날짜를 오늘 날짜로 초기화
+            start.value = dateFormat(today); // type=date 요소의 value는 'yyyy-mm-dd' 패턴이어야 합니다.
+            start.min = start.value;
+            today.setMonth(today.getMonth() + 3);
+            start.max = dateFormat(today);
+        };
+
+        const changeEndDate = () => {
+            if (
+                night.value === '0' ||
+                start.value === ''
+            ) {
+                end.value = '';
+            } else if (!!night.value) {
+                const newDate = new Date(start.value);
+                newDate.setDate(newDate.getDate() + Number(night.value));
+
+                end.value = dateFormat(newDate);
+            }
+        };
+
+        window.onload = () => {
+            initialize();
+            night.addEventListener('change', changeEndDate);
+            start.addEventListener('change', changeEndDate);
+        }
+    </script>
+</body>
+</html>
