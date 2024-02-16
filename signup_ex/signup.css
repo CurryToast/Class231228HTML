@@ -1,0 +1,8 @@
+label {
+    display: inline-block;
+    width: 80px;
+}
+
+label > strong {
+    color: red;
+}
