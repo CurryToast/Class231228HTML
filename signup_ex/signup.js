@@ -1,24 +1,24 @@
 const nameRegex = /^[a-zA-Z가-힣]{2,5}$/;
 const idRegex =  /^(?=.*[a-zA-Z])(?=.*[0-9]).{5,20}$/;
-const pwRegex =  /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*?_]).{8,16}$/;
+const pwRegex =  /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*?_]).{8,20}$/;
 
 const regexTest = (el, regex) => {
-    if (!regex.test(el.value) && !el.className.includes('error')) {
+    if (!regex.test(el.value)) {
         el.setAttribute('class', 'error');
-    } else if (regex.test(el.value)) {
+    } else {
         el.removeAttribute('class');
     }
 };
 
-document.forms[0].name.addEventListener('keydown', (e) => {
+document.forms[0].name.addEventListener('change', (e) => {
     regexTest(e.target, nameRegex);
 });
 
-document.forms[0].id.addEventListener('keydown', (e) => {
+document.forms[0].id.addEventListener('change', (e) => {
     regexTest(e.target, idRegex);
 });
 
-document.forms[0].password.addEventListener('keydown', (e) => {
+document.forms[0].password.addEventListener('change', (e) => {
     regexTest(e.target, pwRegex);
 });
 
