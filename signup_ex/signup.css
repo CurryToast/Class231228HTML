@@ -1,8 +1,54 @@
-label {
-    display: inline-block;
-    width: 80px;
+main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 45px;
 }
 
-label > strong {
+#title {
+    margin: 0 auto 10px;
+}
+
+form {
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+form div {
+    padding: 0 12px;
+    border: 2px solid blue;
+}
+form div:not(:last-of-type) {
+    border-bottom: none;
+}
+
+form p {
+    display: inline-block;
+    width: 80px;
+    margin: 0;
+    padding: 16px 0;
+}
+form p > strong {
     color: red;
+}
+
+form input.error {
+    border-color: red;
+}
+form input.error:focus {
+    border-color: red;
+    outline: none;
+}
+
+form button {
+    width: 100%;
+    margin-top: 1.2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: cadetblue;
+    transition-duration: 0.2s;
+    transform-style: smooth;
+}
+form button:hover {
+    background-color: lightblue;
 }

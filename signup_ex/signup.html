@@ -4,35 +4,50 @@
     <meta charset="UTF-8">
     <title>Sign Up</title>
     <link rel="stylesheet" href="signup.css">
-    <script src="signup.js"></script>
 </head>
 <body>
     <main>
         <h3 id="title">회원 가입</h3>
-        <form action="">
+        <form
+            action="signup_success.html"
+            onsubmit="return openConfirm()"
+        >
             <div>
-                <label for="name">
+                <p>
                     이름<strong>*</strong>
-                </label>
-                <input type="text" name="name" id="name" placeholder="이름 입력" required>
+                </p>
+                <input type="text" name="name" placeholder="이름 입력" required>
             </div>
             <div>
-                <label for="userid">
+                <p>
                     아이디<strong>*</strong>
-                </label>
-                <input type="text" name="id" id="userid" placeholder="아이디 입력" required>
+                </p>
+                <input type="text" name="id" placeholder="아이디 입력" required>
             </div>
             <div>
-                <label for="password">
+                <p>
                     비밀번호<strong>*</strong>
-                </label>
-                <input type="password" name="password" id="password" placeholder="패스워드 입력" required>
+                </p>
+                <input type="password" name="password" placeholder="패스워드 입력" required>
             </div>
             <div>
-                <label for="">이메일</label>
-                <input type="email" name="email" id="email" placeholder="이메일 입력">
+                <p>이메일</p>
+                <input type="email" name="email" placeholder="이메일 입력">
             </div>
+            <div>
+                <p>성별</p>
+                <input type="radio" name="gender" id="male" value="male">
+                <label for="male">남성</label>
+                <input type="radio" name="gender" id="female" value="female">
+                <label for="female">여성</label>
+            </div>
+            <div>
+                <p>생년월일</p>
+                <input type="date" name="birthday">
+            </div>
+            <button>회원가입</button>
         </form>
     </main>
+    <script src="signup.js"></script>
 </body>
 </html>
