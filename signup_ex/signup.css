@@ -1,21 +1,40 @@
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 1.6rem;
+    font-family: 'Roboto', 'Noto Sans', sans-serif;
+}
+
 main {
     display: flex;
     flex-direction: column;
     margin-top: 45px;
 }
 
-#title {
-    margin: 0 auto 10px;
+main > * {
+    min-width: 30rem;
+    text-align: center;
+}
+
+main > h3 {
+    margin: 0 auto;
+    padding: 12px 0;
+    color: white;
+    background-color: lightblue;
 }
 
 form {
-    padding: 0 20px;
+    padding: 0;
     margin: 0 auto;
 }
 
-form div {
+form > div {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
     padding: 0 12px;
-    border: 2px solid blue;
+    border: 2px solid lightblue;
 }
 form div:not(:last-of-type) {
     border-bottom: none;
@@ -26,11 +45,15 @@ form p {
     width: 80px;
     margin: 0;
     padding: 16px 0;
+    font-weight: 700;
 }
 form p > strong {
     color: red;
 }
 
+form input {
+    font-size: 1.3rem;
+}
 form input.error {
     border-color: red;
 }
@@ -42,13 +65,16 @@ form input.error:focus {
 form button {
     width: 100%;
     margin-top: 1.2rem;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     cursor: pointer;
+    color: lightgray;
     background-color: cadetblue;
-    transition-duration: 0.2s;
-    transform-style: smooth;
+    transition-duration: 0.22s;
+    border: 2px solid cadetblue;
 }
 form button:hover {
+    color: white;
+    border-color: lightblue;
     background-color: lightblue;
 }
