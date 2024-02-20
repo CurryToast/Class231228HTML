@@ -2,7 +2,7 @@
 const nameRegex = /^[a-zA-Z가-힣]*$/;
 const idRegex =  /^(?=.*[a-zA-Z])(?=.*[0-9]).{5,20}$/;
 const pwRegex =  /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*?_]).{6,999}$/;
-const birthRegex = /(19|20)\\d{1}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])/;
+const birthRegex = /(19|20)\d{2}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])/;
 const phoneRegex =  /^(\d{2,3})-(\d{3,4})-(\d{4})$/;
 
 function fieldCheck(el, isValid, dom, msg) {
